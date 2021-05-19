@@ -1,0 +1,52 @@
+:root {
+  --green: #a2ccb6;
+  --light-peach: #ffecd9;
+  --peach: #ee786e;
+  --sand: #fceeb5;
+  --white: #fff;
+}
+
+.button {
+  display: block;
+  background: linear-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+  background-size: 500px;
+  margin: 10px;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  color: #fff;
+  cursor: pointer;
+  font: 1.5em sans-serif;
+  height: 5rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  width: 20rem;
+  text-transform: uppercase;
+  margin: 10px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-border-radius: 5rem;
+  -moz-border-radius: 5rem;
+  -ms-border-radius: 5rem;
+  -o-border-radius: 5rem;
+}
+
+.button:hover {
+  animation-name: animagradient;
+  animation-duration: 80ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0.5;
+}
+
+@keyframes animagradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
