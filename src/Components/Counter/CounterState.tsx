@@ -8,15 +8,13 @@ class CounterState extends React.Component<Props, State> {
     this.state = {
       count: 0,
     };
+    console.log("Constructor");
   }
 
-  //   changeValue = (value: string) => {
-  //     if (value === "ADD") {
-  //       this.setState((prevState) => ({ count: prevState.count + 1 }));
-  //     } else {
-  //       this.setState((prevState) => ({ count: prevState.count - 1 }));
-  //     }
-  //   };
+  static getDerivedStateFromProps(props: Props, state: State) {
+    console.log("getDerivedStateFromProps");
+    return null;
+  }
 
   changeValue(value: string): void {
     if (value === "ADD") {
@@ -45,7 +43,33 @@ class CounterState extends React.Component<Props, State> {
     );
   };
 
+  componentDidMount() {
+    console.log("Component Did Mount");
+  }
+
+  shouldComponentUpdate(nextprops: Props, nextstate: State): boolean {
+    console.log("Should Component Update", nextprops, nextstate);
+    if (nextprops !== this.props || nextstate !== this.state) {
+      return true;
+    }
+    return false;
+  }
+
+  getSnapshotBeforeUpdate(nextprops: Props, nextstate: State): boolean {
+    console.log("get snapshot before update", nextprops, nextstate);
+    if (nextprops !== this.props || nextstate !== this.state) {
+      this.forceUpdate();
+      return true;
+    }
+    return false;
+  }
+
+  componentDidUpdate() {
+    console.log("Component Updated");
+  }
+
   render() {
+    console.log("Render");
     return (
       <>
         <h1>{this.props.heading}</h1>
