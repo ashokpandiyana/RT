@@ -1,0 +1,7 @@
+button {
+  display: block;
+  cursor: pointer;
+  outline: none;
+  width: 100px;
+  background-color: rebeccapurple;
+}
